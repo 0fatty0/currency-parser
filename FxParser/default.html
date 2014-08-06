@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="date" data-bind="value:displayDate, event:{change:refreshStamps}"/>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Currency Pair</td>
+                <td>Time</td>
+                <td>Start Price</td>
+                <td>Middle Price</td>
+                <td>End Price</td>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: currencyStamps">
+            <tr>
+                <td data-bind="text:$data.CurrencyPair"></td>
+                <td data-bind="text:$data.Time"></td>
+                <td data-bind="text:$data.StartPrice"></td>
+                <td data-bind="text:$data.MiddlePrice"></td>
+                <td data-bind="text:$data.EndPrice"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script type='text/javascript' src='/Scripts/jquery-2.1.1.min.js'></script>
+    <script type='text/javascript' src='/Scripts/knockout-3.0.0.js'></script>
+    <script type='text/javascript' src='/Scripts/CurrencyStampsViewModel.js'></script>
+</body>
+</html>
