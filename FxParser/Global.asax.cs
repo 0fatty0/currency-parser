@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Threading;
@@ -14,8 +15,8 @@ namespace FxParser
     {
         private CurrencyDbContext _currencyDbContext;
         private bool _applicationClosing = false;
-        private string CurrencyPair = "EUR/USD";
-        private int IntervalInSeconds = 5;
+        private string CurrencyPair = ConfigurationManager.AppSettings["CurrencyPair"];
+        private int IntervalInSeconds = Int32.Parse(ConfigurationManager.AppSettings["IntervalInSeconds"]);
         private string _sessionId = null;
         private string _sessionQualifierRandom = null;
         protected void Application_Start(object sender, EventArgs e)
